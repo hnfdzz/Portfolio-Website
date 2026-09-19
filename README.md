@@ -1,4 +1,4 @@
-# 🚀 Personal Portfolio Website
+# Personal Portfolio Website
 
 Portofolio web modern yang menampilkan berbagai proyek Software & AI Development. Dibuat dengan tampilan interaktif, responsif, serta dilengkapi fitur *Dark/Light Mode* dan efek kursor *spotlight*.
 
