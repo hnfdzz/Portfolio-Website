@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanif Hafidz Abdurrahman — Software & AI Developer</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">Hanif<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-theme" id="themeToggle" aria-label="Toggle Theme">
+                    <i data-lucide="sun"></i>
+                </button>
+                <a href="#contact" class="btn-primary">Get in Touch</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <!-- Kolom Kiri: Teks Utama & Filter Projects -->
+        <div class="hero-left">
+            <div class="hero-badge">
+                <i data-lucide="sparkles" style="width: 16px;"></i>
+                <span>Halo, namaku Hanif Hafidz Abdurrahman</span>
+            </div>
+
+            <!-- TULISAN UTAMA YANG DITINGKATKAN KEINTERAKTIFANNYA -->
+            <h1 class="hero-title">
+                SOFTWARE<br>
+                <span class="text-stroke interactive-text" 
+                      id="heroInteractiveText"
+                      data-text="&amp; AI DEVELOPER"
+                      data-words='["&amp; AI DEVELOPER", "&amp; DATA ANALYST", "&amp; WEB ENGINEER", "&amp; TECH ENTHUSIAST"]'>
+                      &amp; AI DEVELOPER
+                </span>
+                <span class="cursor-blink">|</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Mahasiswa S1 Fakultas Computer Science, jurusan Information Technology. Berfokus pada pengembangan sistem web, kecerdasan buatan (AI/LLM), dan analisa data.
+            </p>
+
+            <div class="hero-controls-title">Filter Project Sesuai Kategori:</div>
+            <div class="hero-controls">
+                <button class="filter-btn active" data-filter="all">
+                    <i data-lucide="layers" style="width: 16px;"></i> Semuanya (9)
+                </button>
+                <button class="filter-btn" data-filter="ai">
+                    <i data-lucide="bot" style="width: 16px;"></i> AI & Data
+                </button>
+                <button class="filter-btn" data-filter="software">
+                    <i data-lucide="code" style="width: 16px;"></i> Software & Web
+                </button>
+                <button class="filter-btn" data-filter="system">
+                    <i data-lucide="cpu" style="width: 16px;"></i> Systems & Cloud
+                </button>
+            </div>
+        </div>
+
+        <!-- Kolom Kanan: Profile Card -->
+        <div class="hero-right">
+            <div class="hero-card">
+                <div class="avatar-wrapper">
+                    <img src="assets/images/profile.jpg" alt="Hanif Hafidz Abdurrahman" class="avatar-img">
+                </div>
+                <h3 class="card-name">Hanif Hafidz A.</h3>
+                <p class="card-role">IT Undergraduate & Engineer</p>
+                
+                <div class="card-status">
+                    <span class="status-dot"></span>
+                    Open for Projects & Collaboration
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+        <div class="section-header">
+            <div class="section-badge">
+                <i data-lucide="folder-git-2" style="width: 15px;"></i>
+                <span>Portfolio Showcase</span>
+            </div>
+            <h2 class="section-title">Selected Works</h2>
+            <p style="color: var(--text-muted);">Proyek-proyek unggulan yang telah saya bangun.</p>
+        </div>
+
+        <!-- Container dinamis dari js/projects.js -->
+        <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- 2. EXPERIENCE SECTION -->
+    <section class="experience-section" id="experience">
+        <div class="experience-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i data-lucide="briefcase" style="width: 15px;"></i>
+                    <span>Leadership & Activities</span>
+                </div>
+                <h2 class="section-title">Organizational Experience</h2>
+                <p style="color: var(--text-muted);">Rekam jejak organisasi, kepanitiaan event, serta pencapaian semasa SMA & Perguruan Tinggi.</p>
+            </div>
+
+            <!-- Stats Bar Ringkasan Pengalaman -->
+            <div class="exp-stats-bar">
+                <div class="exp-stat-item">
+                    <span class="exp-stat-num">14+</span>
+                    <span class="exp-stat-label">Total Kepanitiaan Event</span>
+                </div>
+                <div class="exp-stat-item">
+                    <span class="exp-stat-num">International</span>
+                    <span class="exp-stat-label">Compsphere 2026 Event</span>
+                </div>
+                <div class="exp-stat-item">
+                    <span class="exp-stat-num">Leadership</span>
+                    <span class="exp-stat-label">Ketua & Wakil Ketua Event</span>
+                </div>
+            </div>
+
+            <!-- Grid Kartu Pengalaman -->
+            <div class="experience-grid">
+
+                <!-- Card 1: Compsphere 2026 -->
+                <div class="exp-card highlight-card">
+                    <div class="exp-card-header">
+                        <span class="exp-tag tag-international">International Event</span>
+                        <span class="exp-date">2026</span>
+                    </div>
+                    <h3 class="exp-title">Compsphere 2026</h3>
+                    <p class="exp-org">Fakultas Computer Science</p>
+
+                    <div class="exp-roles">
+                        <div class="role-badge major">
+                            <i data-lucide="crown" style="width: 16px;"></i>
+                            <div>
+                                <strong>Ketua Divisi Sub Event Exhibition</strong>
+                                <span>Mengkoordinasi seluruh rangkaian dan tata kelola pameran teknologi tingkat internasional.</span>
+                            </div>
+                        </div>
+                        <div class="role-badge minor">
+                            <i data-lucide="users" style="width: 16px;"></i>
+                            <div>
+                                <strong>Anggota Divisi Main Event Hackathon</strong>
+                                <span>Berpartisipasi aktif dalam operasional dan kelancaran kompetisi Hackathon utama.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Studi Banding Universitas Brawijaya -->
+                <div class="exp-card">
+                    <div class="exp-card-header">
+                        <span class="exp-tag tag-lead">Project Leader</span>
+                        <span class="exp-date">Kuliah</span>
+                    </div>
+                    <h3 class="exp-title">Ketua Event Studi Banding</h3>
+                    <p class="exp-org">Universitas Brawijaya (UB) Study Tour</p>
+                    <p class="exp-desc">
+                        Memimpin dan mengarahkan perencanaan, eksekusi, serta hubungan eksternal dengan pihak Universitas Brawijaya. Bertanggung jawab atas koordinasi puluhan delegasi mahasiswa.
+                    </p>
+                </div>
+
+                <!-- Card 3: Social Project Panti Asuhan -->
+                <div class="exp-card">
+                    <div class="exp-card-header">
+                        <span class="exp-tag tag-vlead">Vice Leader</span>
+                        <span class="exp-date">Kuliah</span>
+                    </div>
+                    <h3 class="exp-title">Wakil Ketua Social Project</h3>
+                    <p class="exp-org">Pengabdian Masyarakat / Panti Asuhan</p>
+                    <p class="exp-desc">
+                        Membantu mengkoordinasikan kegiatan bakti sosial dan literasi teknologi di panti asuhan, mengelola penggalangan dana, serta logistik acara secara responsif.
+                    </p>
+                </div>
+
+                <!-- Card 4: 14+ Kepanitiaan Event Kampus -->
+                <div class="exp-card">
+                    <div class="exp-card-header">
+                        <span class="exp-tag">Active Committee</span>
+                        <span class="exp-date">14 Event</span>
+                    </div>
+                    <h3 class="exp-title">Kepanitiaan & Organisasi Kampus</h3>
+                    <p class="exp-org">Fakultas Computer Science & IT Org</p>
+                    <p class="exp-desc">
+                        Aktif berkontribusi dalam lebih dari 14 event universitas yang meliputi seminar IT, workshop coding, welcoming party, hingga kompetisi teknologi nasional.
+                    </p>
+                </div>
+
+                <!-- Card 5: Pengalaman & Prestasi SMA -->
+                <div class="exp-card full-width-card">
+                    <div class="exp-card-header">
+                        <span class="exp-tag tag-hs">High School Era</span>
+                        <span class="exp-date">Masa SMA</span>
+                    </div>
+                    <h3 class="exp-title">Pengalaman Organisasi & Prestasi SMA</h3>
+                    <p class="exp-org">Sekolah Menengah Atas (SMA)</p>
+                    <p class="exp-desc">
+                        Mendapat nilai akhir rapor 90,4. Terpilih menjadi tim debat angkatan dan mengikuti banyak perlombaan debat, salah satunya LDBI tingkat nasional yaitu SMENTION 2023 dan mendapat juara harapan 1. Aktif dalam mengikuti OSIS dan menjadi ketua divisi Bendahara angkatan dan aktif dalam kepanitiaan yang berkaitan dengan pengelolaan keuangan. Mengikuti kegiatan kesiswaan tingkat akhir yaitu LKMA (Latihan Kepemimpinan & Manajemen Akhir) dengan destinasi Brunei dan juga Jepang, ikut menganalisis kekuatan, kelemahan, tantangan, dan juga peluang dari tiap negara yang dikunjungi (Analysis SWOT).
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <!-- Kolom Kiri: Identitas -->
+            <div class="about-left-card">
+                <div class="about-badge">
+                    <i data-lucide="user-check" style="width: 15px;"></i>
+                    <span>About Me</span>
+                </div>
+                <h2 class="about-title">Latar Belakang & Fokus</h2>
+                <p class="about-subtitle">IT Undergraduate & Tech Enthusiast</p>
+
+                <div class="skills-mini-list">
+                    <p class="skills-label">Core Capabilities</p>
+                    <div class="skills-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AI / LLM</span>
+                        <span class="tag">Web Development</span>
+                        <span class="tag">Data Analytics</span>
+                        <span class="tag">UI/UX Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Narasi Bio & Stats -->
+            <div class="about-right">
+                <div class="about-bio">
+                    <p>
+                        Saya <strong>Hanif Hafidz Abdurrahman</strong>, mahasiswa aktif S1 Fakultas <strong>Computer Science</strong> dengan spesialisasi program studi <strong>Information Technology</strong>.
+                    </p>
+                    <p>
+                        Memiliki passion mendalam dalam mengintegrasikan <strong>Software Development</strong>, <strong>Artificial Intelligence (AI/LLM)</strong>, dan <strong>Data Science</strong>. Berdedikasi untuk menciptakan solusi teknologi tangguh yang memadukan arsitektur sistem backend modern dengan antarmuka yang intuitif.
+                    </p>
+                </div>
+
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon"><i data-lucide="code-2" style="width: 18px;"></i></span>
+                        <span>Software & Web Dev</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon"><i data-lucide="bot" style="width: 18px;"></i></span>
+                        <span>AI & LLM Integration</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon"><i data-lucide="bar-chart-3" style="width: 18px;"></i></span>
+                        <span>Data Analytics</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon"><i data-lucide="layout" style="width: 18px;"></i></span>
+                        <span>Modern UI/UX Design</span>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">9+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">S1</div>
+                        <div class="stat-label">Computer Science</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CONTACT & FOOTER SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <!-- Header Contact -->
+            <div class="contact-header">
+                <span class="section-tagline">LET'S WORK TOGETHER</span>
+                <h2 class="contact-title">Tertarik Berkolaborasi atau Memiliki Proyek?</h2>
+                <p class="contact-subtitle">
+                    Hubungi saya melalui kontak di bawah ini. Saya selalu terbuka untuk diskusi proyek, kolaborasi, atau sekadar menyapa!
+                </p>
+            </div>
+
+            <!-- Cards Contact Grid -->
+            <div class="contact-cards-grid">
+                <!-- Email Card -->
+                <a href="mailto:abdurrahmanhaniff39@gmail.com" class="contact-card">
+                    <div class="contact-card-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div class="contact-card-info">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">abdurrahmanhaniff39@gmail.com</span>
+                    </div>
+                    <div class="contact-card-action">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <!-- WhatsApp / Telepon Card -->
+                <a href="https://wa.me/62895324857327" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-card-icon">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <div class="contact-card-info">
+                        <span class="contact-label">Telepon / WhatsApp</span>
+                        <span class="contact-value">+62 895 3248 57327</span>
+                    </div>
+                    <div class="contact-card-action">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <!-- GitHub Card -->
+                <a href="https://github.com/hnfdzz" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-card-icon">
+                        <i data-lucide="github"></i>
+                    </div>
+                    <div class="contact-card-info">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">github.com/hnfdzz</span>
+                    </div>
+                    <div class="contact-card-action">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
+                <p>© 2026 Hanif Hafidz Abdurrahman. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- JS Scripts -->
+    <script src="js/projects.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Inisialisasi ikon Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
