@@ -1,65 +1,101 @@
+﻿// File: js/projects.js
+
 const projectsData = [
+    // ==========================================
+    // 1. PROYEK UTAMA (FEATURED PROJECTS)
+    // ==========================================
     {
-        title: "AI Knowledge Graph & Query System",
-        category: "ai",
-        categoryLabel: "AI & Data",
-        description: "Sistem ekstraksi entitas dan analisis relasi menggunakan Large Language Models (LLM) untuk sintesis data otomatis.",
-        tags: ["Python", "LangChain", "Neo4j", "FastAPI"]
-    },
-    {
-        title: "Enterprise Inventory Management System",
+        id: "spendwise",
+        title: "SpendWise Studio",
         category: "software",
         categoryLabel: "Software & Web",
-        description: "Aplikasi manajemen stok dan transaksi real-time dengan dasbor analitik interaktif dan alur kerja otomatis.",
-        tags: ["React", "TypeScript", "Node.js", "PostgreSQL"]
+        description: "Aplikasi web penjelajah & pelacak keuangan fullstack dengan sistem autentikasi aman serta real-time financial insights.",
+        tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "NextAuth"],
+        icon: "wallet"
     },
     {
-        title: "Microservices Cloud Infrastructure",
-        category: "system",
-        categoryLabel: "Systems & Cloud",
-        description: "Arsitektur cloud terdistribusi dengan pemantauan performa otomatis dan deployment CI/CD pipeline.",
-        tags: ["Docker", "Kubernetes", "AWS", "Terraform"]
-    },
-    {
-        title: "Smart Sentiment Analysis Dashboard",
-        category: "ai",
-        categoryLabel: "AI & Data",
-        description: "Platform NLP untuk menganalisis opini publik dari media sosial dengan pemrosesan bahasa alami berbasis Python.",
-        tags: ["Python", "PyTorch", "Streamlit", "Transformers"]
-    },
-    {
-        title: "Modern E-Commerce Mobile Web App",
+        id: "ecafe",
+        title: "E-Cafe System",
         category: "software",
         categoryLabel: "Software & Web",
-        description: "Aplikasi web belanja berkinerja tinggi dengan sistem pembayaran terintegrasi dan responsivitas modern.",
-        tags: ["Next.js", "Tailwind CSS", "Stripe", "Prisma"]
+        description: "Platform pemesanan kafe interaktif yang dilengkapi dengan sistem identitas visual empat warna kustom untuk UX optimal.",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+        icon: "coffee"
     },
     {
-        title: "Automated Data Pipeline & Analytics",
+        id: "resiliops",
+        title: "ResiliOps",
         category: "system",
         categoryLabel: "Systems & Cloud",
-        description: "Pipeline ETL terotomatisasi untuk pembersihan, enkripsi, dan agregasi data berskala besar.",
-        tags: ["Python", "Apache Airflow", "BigQuery", "SQL"]
+        description: "Dashboard resiliensi microservice dan chaos engineering yang mengimplementasikan Redis-backed circuit breaker untuk fault tolerance.",
+        tags: ["FastAPI", "Redis", "Next.js"],
+        icon: "shield-alert"
     },
     {
-        title: "AI Chatbot Assistant with RAG",
+        id: "weeview",
+        title: "WeeView",
+        category: "system",
+        categoryLabel: "Systems & Cloud",
+        description: "Sistem berbasis WiFi CSI untuk deteksi keberadaan manusia dan estimasi pose menggunakan embedded signal processing pada ESP32-S3.",
+        tags: ["Rust", "ESP32-S3", "Signal Processing"],
+        icon: "wifi"
+    },
+
+    // ==========================================
+    // 2. PROYEK LAINNYA & AI / DATA SCIENCE
+    // ==========================================
+    {
+        id: "ai-1",
+        title: "AI Medical Assistant & Diagnostics",
         category: "ai",
         categoryLabel: "AI & Data",
-        description: "Asisten AI kontekstual menggunakan metode Retrieval-Augmented Generation untuk basis pengetahuan internal.",
-        tags: ["OpenAI API", "Pinecone", "Python", "Flask"]
+        description: "Sistem kecerdasan buatan berbasis LLM untuk membantu triase dan analisis data medis awal secara responsif.",
+        tags: ["Python", "LLM", "FastAPI", "PyTorch"],
+        icon: "bot"
     },
     {
-        title: "Academic & Student Portal System",
+        id: "ai-2",
+        title: "Smart Sentiment & Trend Analyzer",
+        category: "ai",
+        categoryLabel: "AI & Data",
+        description: "Dashboard analitik data media sosial berbasis Natural Language Processing (NLP) untuk deteksi tren waktu nyata.",
+        tags: ["Python", "NLP", "Pandas", "Streamlit"],
+        icon: "bar-chart-3"
+    },
+    {
+        id: "ai-3",
+        title: "Predictive Sales & Demand Analytics",
+        category: "ai",
+        categoryLabel: "AI & Data",
+        description: "Model Machine Learning untuk memprediksi stok barang dan tren penjualan UMKM dengan akurasi tinggi.",
+        tags: ["Scikit-Learn", "Python", "Data Science"],
+        icon: "trending-up"
+    },
+    {
+        id: "soft-3",
+        title: "Interactive Portfolio Web 3D",
         category: "software",
         categoryLabel: "Software & Web",
-        description: "Portal akademik terpadu untuk penginputan nilai, manajemen jadwal, dan sinkronisasi berkas mahasiswa.",
-        tags: ["Vue.js", "Laravel", "MySQL", "Tailwind"]
+        description: "Website portofolio interaktif berbasis Three.js 3D Space visual dengan arsitektur UI/UX modern.",
+        tags: ["JavaScript", "Three.js", "HTML5", "CSS3"],
+        icon: "globe"
     },
     {
-        title: "High-Availability Server Cluster",
+        id: "sys-1",
+        title: "Microservices Infrastructure Setup",
         category: "system",
         categoryLabel: "Systems & Cloud",
-        description: "Sistem server redundan dengan load balancer otomatis untuk menjamin uptime aplikasi hingga 99.9%.",
-        tags: ["Nginx", "Linux", "Bash", "Prometheus"]
+        description: "Implementasi arsitektur microservices menggunakan Docker containerization dan Nginx Reverse Proxy.",
+        tags: ["Docker", "Nginx", "Linux", "DevOps"],
+        icon: "server"
+    },
+    {
+        id: "sys-2",
+        title: "Automated CI/CD Pipeline Deployment",
+        category: "system",
+        categoryLabel: "Systems & Cloud",
+        description: "Sistem otomasi integrasi dan pengujian kode otomatis dari repository GitHub langsung ke server cloud.",
+        tags: ["GitHub Actions", "Docker", "AWS"],
+        icon: "git-branch"
     }
 ];

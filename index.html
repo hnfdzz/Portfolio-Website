@@ -1,370 +1,444 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanif Hafidz Abdurrahman — Software & AI Developer</title>
+    <title>Portfolio - Software Developer & Systems Engineer</title>
     
-    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
     
-    <!-- External CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Lucide Icons -->
+    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Three.js 3D Library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom Modular CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR HEADER -->
     <header>
-        <nav class="nav-container">
-            <a href="#" class="logo">Hanif<span>.</span></a>
+        <div class="nav-container">
+            <a href="#" class="logo">Dev<span>Portfolio</span></a>
+            
             <ul class="nav-links">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#projects">Proyek</a></li>
+                <li><a href="#experience">Pengalaman</a></li>
+                <li><a href="#achievements">Prestasi</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
             </ul>
+
             <div class="nav-actions">
-                <button class="btn-theme" id="themeToggle" aria-label="Toggle Theme">
+                <button id="themeToggle" class="btn-theme" aria-label="Toggle Theme">
                     <i data-lucide="sun"></i>
                 </button>
-                <a href="#contact" class="btn-primary">Get in Touch</a>
+                <a href="#contact" class="btn-primary">Hubungi Saya</a>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <!-- Kolom Kiri: Teks Utama & Filter Projects -->
-        <div class="hero-left">
+    <!-- HERO SECTION (WITH THREE.JS 3D BACKGROUND) -->
+    <section id="hero" class="hero">
+        <div id="canvas3dContainer"></div>
+
+        <div class="hero-content">
             <div class="hero-badge">
                 <i data-lucide="sparkles" style="width: 16px;"></i>
-                <span>Halo, namaku Hanif Hafidz Abdurrahman</span>
+                <span>Portofolio Interaktif 3D</span>
             </div>
 
-            <!-- TULISAN UTAMA YANG DITINGKATKAN KEINTERAKTIFANNYA -->
             <h1 class="hero-title">
-                SOFTWARE<br>
-                <span class="text-stroke interactive-text" 
-                      id="heroInteractiveText"
-                      data-text="&amp; AI DEVELOPER"
-                      data-words='["&amp; AI DEVELOPER", "&amp; DATA ANALYST", "&amp; WEB ENGINEER", "&amp; TECH ENTHUSIAST"]'>
-                      &amp; AI DEVELOPER
-                </span>
-                <span class="cursor-blink">|</span>
+                Mengembangkan Solusi Perangkat Lunak & Sistem Terdistribusi <br>
+                <span class="text-stroke" id="heroInteractiveText" data-words='["Fullstack Web", "Embedded Systems", "Microservices"]'>Fullstack Web</span><span class="cursor-blink">|</span>
             </h1>
 
             <p class="hero-subtitle">
-                Mahasiswa S1 Fakultas Computer Science, jurusan Information Technology. Berfokus pada pengembangan sistem web, kecerdasan buatan (AI/LLM), dan analisa data.
+                Fokus pada pengembangan aplikasi web performa tinggi, sistem berbasis sensor/embedded, arsitektur microservice, dan implementasi algoritma terstruktur.
             </p>
 
-            <div class="hero-controls-title">Filter Project Sesuai Kategori:</div>
-            <div class="hero-controls">
-                <button class="filter-btn active" data-filter="all">
-                    <i data-lucide="layers" style="width: 16px;"></i> Semuanya (9)
-                </button>
-                <button class="filter-btn" data-filter="ai">
-                    <i data-lucide="bot" style="width: 16px;"></i> AI & Data
-                </button>
-                <button class="filter-btn" data-filter="software">
-                    <i data-lucide="code" style="width: 16px;"></i> Software & Web
-                </button>
-                <button class="filter-btn" data-filter="system">
-                    <i data-lucide="cpu" style="width: 16px;"></i> Systems & Cloud
-                </button>
-            </div>
-        </div>
-
-        <!-- Kolom Kanan: Profile Card -->
-        <div class="hero-right">
             <div class="hero-card">
                 <div class="avatar-wrapper">
-                    <img src="assets/images/profile.jpg" alt="Hanif Hafidz Abdurrahman" class="avatar-img">
+                    <img src="assets/images/profile.jpg" alt="Foto Profil" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'">
                 </div>
-                <h3 class="card-name">Hanif Hafidz A.</h3>
-                <p class="card-role">IT Undergraduate & Engineer</p>
-                
-                <div class="card-status">
-                    <span class="status-dot"></span>
-                    Open for Projects & Collaboration
+                <div class="hero-card-details">
+                    <div class="card-name">Software Engineer</div>
+                    <div class="card-role">Fullstack & Systems Developer</div>
+                    <div class="card-status">
+                        <span class="status-dot"></span>
+                        <span>Tersedia untuk Proyek Baru</span>
+                    </div>
                 </div>
+            </div>
+
+            <div class="hero-bottom-bar">
+                <span class="hero-controls-title">Kategori Proyek Utama</span>
+                <div class="planet-nav">
+                    <button class="filter-btn active" data-filter="all">
+                        <i data-lucide="layers" style="width: 16px;"></i> Semua
+                    </button>
+                    <button class="filter-btn" data-filter="web">
+                        <i data-lucide="globe" style="width: 16px;"></i> Web & App
+                    </button>
+                    <button class="filter-btn" data-filter="system">
+                        <i data-lucide="cpu" style="width: 16px;"></i> System & IoT
+                    </button>
+                </div>
+
+                <a href="#projects" class="scroll-down-btn" aria-label="Scroll Down">
+                    <i data-lucide="arrow-down" style="width: 20px;"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 1. PROJECTS SECTION -->
-    <section class="projects-section" id="projects">
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
         <div class="section-header">
             <div class="section-badge">
-                <i data-lucide="folder-git-2" style="width: 15px;"></i>
-                <span>Portfolio Showcase</span>
+                <i data-lucide="folder-git-2" style="width: 14px;"></i>
+                <span>Hasil Karya</span>
             </div>
-            <h2 class="section-title">Selected Works</h2>
-            <p style="color: var(--text-muted);">Proyek-proyek unggulan yang telah saya bangun.</p>
+            <h2 class="section-title">Proyek Pilihan (Featured Projects)</h2>
+            <p style="color: var(--text-muted);">Eksplorasi berbagai proyek web fullstack, microservice dashboard, hingga embedded signal processing.</p>
         </div>
 
-        <!-- Container dinamis dari js/projects.js -->
-        <div class="projects-grid" id="projectsGrid"></div>
-    </section>
-
-    <!-- 2. EXPERIENCE SECTION -->
-    <section class="experience-section" id="experience">
-        <div class="experience-container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <i data-lucide="briefcase" style="width: 15px;"></i>
-                    <span>Leadership & Activities</span>
+        <div id="projectsGrid" class="projects-grid">
+            
+            <!-- Proyek 1: SpendWise Studio -->
+            <div class="project-card">
+                <div class="project-card-header">
+                    <span class="project-tag">Fullstack Web</span>
+                    <i data-lucide="wallet" class="project-icon"></i>
                 </div>
-                <h2 class="section-title">Organizational Experience</h2>
-                <p style="color: var(--text-muted);">Rekam jejak organisasi, kepanitiaan event, serta pencapaian semasa SMA & Perguruan Tinggi.</p>
-            </div>
-
-            <!-- Stats Bar Ringkasan Pengalaman -->
-            <div class="exp-stats-bar">
-                <div class="exp-stat-item">
-                    <span class="exp-stat-num">14+</span>
-                    <span class="exp-stat-label">Total Kepanitiaan Event</span>
-                </div>
-                <div class="exp-stat-item">
-                    <span class="exp-stat-num">International</span>
-                    <span class="exp-stat-label">Compsphere 2026 Event</span>
-                </div>
-                <div class="exp-stat-item">
-                    <span class="exp-stat-num">Leadership</span>
-                    <span class="exp-stat-label">Ketua & Wakil Ketua Event</span>
+                <h3 class="project-title">SpendWise Studio</h3>
+                <p class="project-desc">
+                    Aplikasi web penjelajah dan pelacak keuangan fullstack dengan sistem autentikasi aman serta penyajian wawasan finansial secara real-time.
+                </p>
+                <div class="project-tech-stack">
+                    <span>Next.js</span>
+                    <span>TypeScript</span>
+                    <span>PostgreSQL</span>
+                    <span>Prisma</span>
+                    <span>NextAuth</span>
                 </div>
             </div>
 
-            <!-- Grid Kartu Pengalaman -->
-            <div class="experience-grid">
-
-                <!-- Card 1: Compsphere 2026 -->
-                <div class="exp-card highlight-card">
-                    <div class="exp-card-header">
-                        <span class="exp-tag tag-international">International Event</span>
-                        <span class="exp-date">2026</span>
-                    </div>
-                    <h3 class="exp-title">Compsphere 2026</h3>
-                    <p class="exp-org">Fakultas Computer Science</p>
-
-                    <div class="exp-roles">
-                        <div class="role-badge major">
-                            <i data-lucide="crown" style="width: 16px;"></i>
-                            <div>
-                                <strong>Ketua Divisi Sub Event Exhibition</strong>
-                                <span>Mengkoordinasi seluruh rangkaian dan tata kelola pameran teknologi tingkat internasional.</span>
-                            </div>
-                        </div>
-                        <div class="role-badge minor">
-                            <i data-lucide="users" style="width: 16px;"></i>
-                            <div>
-                                <strong>Anggota Divisi Main Event Hackathon</strong>
-                                <span>Berpartisipasi aktif dalam operasional dan kelancaran kompetisi Hackathon utama.</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Proyek 2: E-Cafe System -->
+            <div class="project-card">
+                <div class="project-card-header">
+                    <span class="project-tag">Web Application</span>
+                    <i data-lucide="coffee" class="project-icon"></i>
                 </div>
-
-                <!-- Card 2: Studi Banding Universitas Brawijaya -->
-                <div class="exp-card">
-                    <div class="exp-card-header">
-                        <span class="exp-tag tag-lead">Project Leader</span>
-                        <span class="exp-date">Kuliah</span>
-                    </div>
-                    <h3 class="exp-title">Ketua Event Studi Banding</h3>
-                    <p class="exp-org">Universitas Brawijaya (UB) Study Tour</p>
-                    <p class="exp-desc">
-                        Memimpin dan mengarahkan perencanaan, eksekusi, serta hubungan eksternal dengan pihak Universitas Brawijaya. Bertanggung jawab atas koordinasi puluhan delegasi mahasiswa.
-                    </p>
+                <h3 class="project-title">E-Cafe System</h3>
+                <p class="project-desc">
+                    Platform pemesanan kafe interaktif yang dilengkapi dengan identitas visual empat warna kustom untuk meningkatkan pengalaman pengguna (UX).
+                </p>
+                <div class="project-tech-stack">
+                    <span>Next.js</span>
+                    <span>TypeScript</span>
+                    <span>Tailwind CSS</span>
                 </div>
-
-                <!-- Card 3: Social Project Panti Asuhan -->
-                <div class="exp-card">
-                    <div class="exp-card-header">
-                        <span class="exp-tag tag-vlead">Vice Leader</span>
-                        <span class="exp-date">Kuliah</span>
-                    </div>
-                    <h3 class="exp-title">Wakil Ketua Social Project</h3>
-                    <p class="exp-org">Pengabdian Masyarakat / Panti Asuhan</p>
-                    <p class="exp-desc">
-                        Membantu mengkoordinasikan kegiatan bakti sosial dan literasi teknologi di panti asuhan, mengelola penggalangan dana, serta logistik acara secara responsif.
-                    </p>
-                </div>
-
-                <!-- Card 4: 14+ Kepanitiaan Event Kampus -->
-                <div class="exp-card">
-                    <div class="exp-card-header">
-                        <span class="exp-tag">Active Committee</span>
-                        <span class="exp-date">14 Event</span>
-                    </div>
-                    <h3 class="exp-title">Kepanitiaan & Organisasi Kampus</h3>
-                    <p class="exp-org">Fakultas Computer Science & IT Org</p>
-                    <p class="exp-desc">
-                        Aktif berkontribusi dalam lebih dari 14 event universitas yang meliputi seminar IT, workshop coding, welcoming party, hingga kompetisi teknologi nasional.
-                    </p>
-                </div>
-
-                <!-- Card 5: Pengalaman & Prestasi SMA -->
-                <div class="exp-card full-width-card">
-                    <div class="exp-card-header">
-                        <span class="exp-tag tag-hs">High School Era</span>
-                        <span class="exp-date">Masa SMA</span>
-                    </div>
-                    <h3 class="exp-title">Pengalaman Organisasi & Prestasi SMA</h3>
-                    <p class="exp-org">Sekolah Menengah Atas (SMA)</p>
-                    <p class="exp-desc">
-                        Mendapat nilai akhir rapor 90,4. Terpilih menjadi tim debat angkatan dan mengikuti banyak perlombaan debat, salah satunya LDBI tingkat nasional yaitu SMENTION 2023 dan mendapat juara harapan 1. Aktif dalam mengikuti OSIS dan menjadi ketua divisi Bendahara angkatan dan aktif dalam kepanitiaan yang berkaitan dengan pengelolaan keuangan. Mengikuti kegiatan kesiswaan tingkat akhir yaitu LKMA (Latihan Kepemimpinan & Manajemen Akhir) dengan destinasi Brunei dan juga Jepang, ikut menganalisis kekuatan, kelemahan, tantangan, dan juga peluang dari tiap negara yang dikunjungi (Analysis SWOT).
-                    </p>
-                </div>
-
             </div>
+
+            <!-- Proyek 3: ResiliOps -->
+            <div class="project-card">
+                <div class="project-card-header">
+                    <span class="project-tag">Cloud & Microservices</span>
+                    <i data-lucide="shield-alert" class="project-icon"></i>
+                </div>
+                <h3 class="project-title">ResiliOps</h3>
+                <p class="project-desc">
+                    Dashboard resiliensi microservice dan chaos engineering yang mengimplementasikan Redis-backed circuit breaker untuk toleransi kesalahan sistem (fault tolerance).
+                </p>
+                <div class="project-tech-stack">
+                    <span>FastAPI</span>
+                    <span>Redis</span>
+                    <span>Next.js</span>
+                </div>
+            </div>
+
+            <!-- Proyek 4: WeeView -->
+            <div class="project-card">
+                <div class="project-card-header">
+                    <span class="project-tag">Embedded & Signal Processing</span>
+                    <i data-lucide="wifi" class="project-icon"></i>
+                </div>
+                <h3 class="project-title">WeeView</h3>
+                <p class="project-desc">
+                    Sistem berbasis WiFi CSI (Channel State Information) untuk deteksi keberadaan manusia dan estimasi pose menggunakan pemrosesan sinyal terintegrasi pada mikrokontroler ESP32-S3.
+                </p>
+                <div class="project-tech-stack">
+                    <span>Rust</span>
+                    <span>ESP32-S3</span>
+                    <span>Signal Processing</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- 3. ABOUT SECTION -->
-    <section class="about-section" id="about">
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+        <div class="section-header">
+            <div class="section-badge">
+                <i data-lucide="briefcase" style="width: 14px;"></i>
+                <span>Jejak Karir</span>
+            </div>
+            <h2 class="section-title">Pengalaman Organisasi & Kepemimpinan</h2>
+        </div>
+
+        <div class="exp-stats-bar">
+            <div>
+                <span class="exp-stat-num">1 Tahun</span>
+                <span class="exp-stat-label">Pengalaman Coding</span>
+            </div>
+            <div>
+                <span class="exp-stat-num">5+ Proyek</span>
+                <span class="exp-stat-label">Selesai Dikembangkan</span>
+            </div>
+            <div>
+                <span class="exp-stat-num">100%</span>
+                <span class="exp-stat-label">Komitmen Kualitas</span>
+            </div>
+        </div>
+
+        <div class="experience-grid">
+            
+            <!-- Pengalaman Kuliah: President University -->
+            <div class="exp-card full-width-card">
+                <div class="exp-card-header">
+                    <span class="exp-tag tag-lead">President University</span>
+                    <span class="exp-date">2024 - Sekarang</span>
+                </div>
+                <h3 class="exp-title">BEM PUFA Computer Science & Event Leadership</h3>
+                <div class="exp-org">President University</div>
+                <p class="exp-desc">Memegang peran kepemimpinan operasional dan acara dalam organisasi mahasiswa Ilmu Komputer.</p>
+                
+                <div class="exp-roles">
+                    <div class="role-badge">
+                        <i data-lucide="check-circle-2" style="width: 18px; color: var(--accent-glow);"></i>
+                        <div>
+                            <strong>Exhibition Division Head & Hackathon Member - Compsphere 2026</strong>
+                            <span>Memimpin divisi pameran serta berkontribusi dalam pelaksanaan kompetisi Hackathon Compsphere 2026.</span>
+                        </div>
+                    </div>
+                    <div class="role-badge">
+                        <i data-lucide="check-circle-2" style="width: 18px; color: var(--accent-glow);"></i>
+                        <div>
+                            <strong>Event Chairperson - Comparative Study Visit to Universitas Brawijaya</strong>
+                            <span>Ketua pelaksana program kunjungan studi banding BEM PUFA Computer Science ke Universitas Brawijaya.</span>
+                        </div>
+                    </div>
+                    <div class="role-badge">
+                        <i data-lucide="check-circle-2" style="width: 18px; color: var(--accent-glow);"></i>
+                        <div>
+                            <strong>Vice Chairperson - Social Project Initiative</strong>
+                            <span>Wakil ketua pelaksana untuk inisiatif proyek sosial BEM PUFA Computer Science.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pengalaman SMA: SMAIT Insantama Bogor -->
+            <div class="exp-card full-width-card">
+                <div class="exp-card-header">
+                    <span class="exp-tag tag-lead">SMAIT Insantama Bogor</span>
+                    <span class="exp-date">Masa SMA</span>
+                </div>
+                <h3 class="exp-title">Kepemimpinan Organisasi & Pelatihan Internasional</h3>
+                <div class="exp-org">Student Cohort Organization - SMAIT Insantama Bogor</div>
+                <p class="exp-desc">Aktif dalam struktur organisasi sekolah serta mengikuti pelatihan manajemen dan kepemimpinan tingkat internasional.</p>
+                
+                <div class="exp-roles">
+                    <div class="role-badge">
+                        <i data-lucide="check-circle-2" style="width: 18px; color: var(--accent-glow);"></i>
+                        <div>
+                            <strong>Head of Treasury Division (Kepala Divisi Keuangan)</strong>
+                            <span>Mengelola perencanaan dan alokasi anggaran keuangan organisasi angkatan siswa (Student Cohort Organization).</span>
+                        </div>
+                    </div>
+                    <div class="role-badge">
+                        <i data-lucide="check-circle-2" style="width: 18px; color: var(--accent-glow);"></i>
+                        <div>
+                            <strong>Leadership & Management Training (LKMA) - Brunei Darussalam & Japan</strong>
+                            <span>Peserta pelatihan kepemimpinan dan manajemen lapangan di Brunei Darussalam dan Jepang.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section id="achievements">
+        <div class="section-header">
+            <div class="section-badge">
+                <i data-lucide="award" style="width: 14px;"></i>
+                <span>Pencapaian</span>
+            </div>
+            <h2 class="section-title">Sertifikasi & Prestasi (Achievements)</h2>
+        </div>
+
+        <div class="experience-grid">
+            <div class="exp-card full-width-card">
+                <div class="exp-roles">
+                    
+                    <div class="role-badge">
+                        <i data-lucide="trophy" style="width: 20px; color: #f59e0b;"></i>
+                        <div>
+                            <strong>1st Runner-Up (Juara Harapan 1) - National LDBI Debate Championship</strong>
+                            <span>SMENTION 2023 - Kompetisi Debat Bahasa Indonesia Tingkat Nasional.</span>
+                        </div>
+                    </div>
+
+                    <div class="role-badge">
+                        <i data-lucide="mic" style="width: 20px; color: #3b82f6;"></i>
+                        <div>
+                            <strong>National Debate Team Representative & Public Speaking Certificate</strong>
+                            <span>Perwakilan Tim Debat Nasional serta menyelesaikan pelatihan & mentorship Public Speaking di SMAIT Insantama Bogor.</span>
+                        </div>
+                    </div>
+
+                    <div class="role-badge">
+                        <i data-lucide="book-open" style="width: 20px; color: #10b981;"></i>
+                        <div>
+                            <strong>Information Technology Learning Path</strong>
+                            <span>Sertifikat kelulusan alur belajar teknologi informasi dari Dicoding Indonesia.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
         <div class="about-container">
-            <!-- Kolom Kiri: Identitas -->
             <div class="about-left-card">
-                <div class="about-badge">
-                    <i data-lucide="user-check" style="width: 15px;"></i>
-                    <span>About Me</span>
+                <div class="section-badge">
+                    <i data-lucide="user" style="width: 14px;"></i>
+                    <span>Profil</span>
                 </div>
-                <h2 class="about-title">Latar Belakang & Fokus</h2>
-                <p class="about-subtitle">IT Undergraduate & Tech Enthusiast</p>
+                <h3 class="about-title">Tentang Saya</h3>
+                <div class="about-subtitle">Software Developer & Tech Enthusiast</div>
 
                 <div class="skills-mini-list">
-                    <p class="skills-label">Core Capabilities</p>
+                    <div class="skills-label">Keahlian Utama:</div>
                     <div class="skills-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Next.js</span>
                         <span class="tag">Python</span>
-                        <span class="tag">AI / LLM</span>
-                        <span class="tag">Web Development</span>
-                        <span class="tag">Data Analytics</span>
-                        <span class="tag">UI/UX Design</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Rust</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">C</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Redis</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Kolom Kanan: Narasi Bio & Stats -->
-            <div class="about-right">
-                <div class="about-bio">
-                    <p>
-                        Saya <strong>Hanif Hafidz Abdurrahman</strong>, mahasiswa aktif S1 Fakultas <strong>Computer Science</strong> dengan spesialisasi program studi <strong>Information Technology</strong>.
-                    </p>
-                    <p>
-                        Memiliki passion mendalam dalam mengintegrasikan <strong>Software Development</strong>, <strong>Artificial Intelligence (AI/LLM)</strong>, dan <strong>Data Science</strong>. Berdedikasi untuk menciptakan solusi teknologi tangguh yang memadukan arsitektur sistem backend modern dengan antarmuka yang intuitif.
-                    </p>
-                </div>
-
+            <div class="about-bio">
+                <p>Saya adalah seorang pengembang perangkat lunak dengan fokus pada pengembangan sistem fullstack, arsitektur microservices, serta embedded signal processing. Memiliki pengalaman kepemimpinan dalam organisasi dan latar belakang kompetisi debat nasional.</p>
+                
                 <div class="about-highlights">
                     <div class="highlight-item">
-                        <span class="highlight-icon"><i data-lucide="code-2" style="width: 18px;"></i></span>
-                        <span>Software & Web Dev</span>
+                        <i data-lucide="code" class="highlight-icon" style="width: 20px;"></i>
+                        <span>Clean & Structured Code</span>
                     </div>
                     <div class="highlight-item">
-                        <span class="highlight-icon"><i data-lucide="bot" style="width: 18px;"></i></span>
-                        <span>AI & LLM Integration</span>
+                        <i data-lucide="layout" class="highlight-icon" style="width: 20px;"></i>
+                        <span>Modern Web Architecture</span>
                     </div>
                     <div class="highlight-item">
-                        <span class="highlight-icon"><i data-lucide="bar-chart-3" style="width: 18px;"></i></span>
-                        <span>Data Analytics</span>
+                        <i data-lucide="zap" class="highlight-icon" style="width: 20px;"></i>
+                        <span>Signal & Fault Tolerance</span>
                     </div>
                     <div class="highlight-item">
-                        <span class="highlight-icon"><i data-lucide="layout" style="width: 18px;"></i></span>
-                        <span>Modern UI/UX Design</span>
+                        <i data-lucide="users" class="highlight-icon" style="width: 20px;"></i>
+                        <span>Leadership & Communication</span>
                     </div>
                 </div>
 
                 <div class="about-stats">
                     <div class="stat-card">
-                        <div class="stat-number">9+</div>
-                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Dedikasi Belajar</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">S1</div>
-                        <div class="stat-label">Computer Science</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Kode Terstruktur</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. CONTACT & FOOTER SECTION -->
-    <section id="contact" class="contact-section">
+    <!-- CONTACT SECTION -->
+    <section id="contact">
         <div class="contact-container">
-            <!-- Header Contact -->
-            <div class="contact-header">
-                <span class="section-tagline">LET'S WORK TOGETHER</span>
-                <h2 class="contact-title">Tertarik Berkolaborasi atau Memiliki Proyek?</h2>
-                <p class="contact-subtitle">
-                    Hubungi saya melalui kontak di bawah ini. Saya selalu terbuka untuk diskusi proyek, kolaborasi, atau sekadar menyapa!
-                </p>
+            <div class="section-badge">
+                <i data-lucide="mail" style="width: 14px;"></i>
+                <span>Komunikasi</span>
             </div>
+            <h2 class="contact-title">Mari Bekerja Sama</h2>
+            <p class="contact-subtitle">Punya ide proyek menarik atau ingin berdiskusi seputar peluang kerja sama? Jangan ragu untuk menghubungi saya.</p>
 
-            <!-- Cards Contact Grid -->
             <div class="contact-cards-grid">
-                <!-- Email Card -->
-                <a href="mailto:abdurrahmanhaniff39@gmail.com" class="contact-card">
+                <a href="mailto:email@domain.com" class="contact-card">
                     <div class="contact-card-icon">
-                        <i data-lucide="mail"></i>
+                        <i data-lucide="mail" style="width: 20px;"></i>
                     </div>
                     <div class="contact-card-info">
-                        <span class="contact-label">Email</span>
+                        <span class="contact-label">Find My Email</span>
                         <span class="contact-value">abdurrahmanhaniff39@gmail.com</span>
                     </div>
-                    <div class="contact-card-action">
-                        <i data-lucide="arrow-up-right"></i>
-                    </div>
+                    <i data-lucide="chevron-right" class="contact-card-action" style="width: 18px;"></i>
                 </a>
 
-                <!-- WhatsApp / Telepon Card -->
-                <a href="https://wa.me/62895324857327" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <div class="contact-card-icon">
-                        <i data-lucide="phone"></i>
-                    </div>
-                    <div class="contact-card-info">
-                        <span class="contact-label">Telepon / WhatsApp</span>
-                        <span class="contact-value">+62 895 3248 57327</span>
-                    </div>
-                    <div class="contact-card-action">
-                        <i data-lucide="arrow-up-right"></i>
-                    </div>
-                </a>
-
-                <!-- GitHub Card -->
                 <a href="https://github.com/hnfdzz" target="_blank" rel="noopener noreferrer" class="contact-card">
                     <div class="contact-card-icon">
-                        <i data-lucide="github"></i>
+                        <i data-lucide="github" style="width: 20px;"></i>
                     </div>
                     <div class="contact-card-info">
-                        <span class="contact-label">GitHub</span>
-                        <span class="contact-value">github.com/hnfdzz</span>
+                        <span class="contact-label">Github</span>
+                        <span class="contact-value">My Github</span>
                     </div>
-                    <div class="contact-card-action">
-                        <i data-lucide="arrow-up-right"></i>
+                    <i data-lucide="chevron-right" class="contact-card-action" style="width: 18px;"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/hanif-abdurrahman-243b4736a/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-card-icon">
+                        <i data-lucide="linkedin" style="width: 20px;"></i>
                     </div>
+                    <div class="contact-card-info">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">My Linkedin</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="contact-card-action" style="width: 18px;"></i>
                 </a>
             </div>
         </div>
-
-        <!-- FOOTER -->
-        <footer class="footer">
-            <div class="footer-container">
-                <p>© 2026 Hanif Hafidz Abdurrahman. All rights reserved.</p>
-            </div>
-        </footer>
     </section>
 
-    <!-- JS Scripts -->
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Developer Portfolio. Built with HTML5, CSS3, Three.js & JavaScript.</p>
+    </footer>
+
+    <!-- Custom Scripts -->
     <script src="js/projects.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // Inisialisasi ikon Lucide
-        lucide.createIcons();
-    </script>
 </body>
 </html>
